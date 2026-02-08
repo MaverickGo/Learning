@@ -2,13 +2,26 @@ import java.lang.IO.println
 
 const val constant: Int = 1; // константа
 fun main(){
-    println("Hello World")
-    val releaseYear: Int = 2003     // переменная только для чтения
-    var age: Int = 26               // переменная
-    println("Release $releaseYear, age -> $age")
-    println("2027 is coming")
-    age++;
-    println("Age is $age now")
+    // leetCodeTasks
+    fun twoSum(nums: IntArray, target: Int): IntArray {
+        val result: IntArray = IntArray(2)
+        for (i: Int in 0..nums.size-1) {
+            for (j: Int in i+1..nums.size-1){
+                if (nums[i] + nums[j] == target) {
+                    result[0] = i
+                    result[1] = j
+                }
+            }
+        }
+        return result
+    }
 
-
+    fun missingNumber(nums: IntArray): Int {
+        for (i: Int in 0..nums.size) {
+            if (!(i in nums)) {
+                return i
+            }
+        }
+        return 0
+    }
 }
