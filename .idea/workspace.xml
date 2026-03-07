@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d90b582-1180-41ac-a6f0-d3b9f6d52907" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tutor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tutor.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,14 +40,17 @@
     &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mirasvet/Yandex.Disk/Mirasvet/Kotlin/LearningProject/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mirasvet/Yandex.Disk/Mirasvet/Kotlin/Learning&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Mirasvet/Yandex.Disk/Mirasvet/Kotlin/LearningProject/src/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Mirasvet\Yandex.Disk\Mirasvet\Kotlin\LearningProject\src" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="SharedIndexes">
