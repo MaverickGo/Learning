@@ -1,3 +1,5 @@
+import java.io.Console
+
 fun main(){
     fun twoSum(nums: IntArray, target: Int): IntArray {
         val result: IntArray = IntArray(2)
@@ -62,4 +64,45 @@ fun main(){
             }
         }
     }
+    fun summaryRanges(nums: IntArray): List<String> {
+        var result: ArrayList<String> = arrayListOf()
+
+        if (nums.size == 0) { return result }
+        if (nums.size == 1) { result.add("${nums[0]}"); return result }
+
+        var rangeStart: Int = nums[0]
+        var delta: Int = 1
+        for (i in 1..nums.size-1) {
+            if (rangeStart == nums[i]-delta){
+                delta++
+            } else {
+                delta = 1
+                if (rangeStart == nums[i-1]) { result.add("$rangeStart") }
+                else { result.add("$rangeStart->${nums[i-1]}") }
+                rangeStart = nums[i]
+            }
+            if (i == nums.size-1) {
+                if (rangeStart == nums[i]) { result.add("$rangeStart") }
+                else { result.add("$rangeStart->${nums[i]}") }
+            }
+        }
+        return result
+    }
+    fun firstUniqChar(s: String): Int {
+        if (s.length == 1) return 0
+
+        for (i in 0..s.length-1) {
+            for (j in 0..s.length-1) {
+                if (i == j) { continue }
+                if (s[i] == s[j]) { break }
+                if ((j == s.length-1) && (s[i] != s[j])) { return i }
+                if (i == s.length-1 && j == s.length-2) { return i }
+            }
+        }
+        return -1
+    }
+    print(firstUniqChar("dddccdbba"))
 }
+
+
+
