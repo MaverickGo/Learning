@@ -32,7 +32,7 @@ Any: хранит значения любого типа
 
 Поразрядные операции
     shl: сдвиг битов числа со знаком влево
-    val z = 3 shl 2 // z = 11 << 2 = 1100
+    val z = 3 shl 2     // z = 11 << 2 = 1100
 
     shr: сдвиг битов числа со знаком вправо
     val z = 12 shr 2     // z = 1100 >> 2 = 11
@@ -143,7 +143,6 @@ fun printStrings(vararg strings: String){
         println(str)
 }
 fun main() {
-
     printStrings("Tom", "Bob", "Sam")
     printStrings("Kotlin", "JavaScript", "Java", "C#", "C++")
 }
