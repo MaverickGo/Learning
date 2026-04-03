@@ -123,6 +123,102 @@ class LeetCodeTasks {
         integer += sings[s[s.length-1]]!!
         return integer
     }
+    fun lengthOfLastWord(s: String): Int {
+        var str = s
+        var IndexOfSpace: Int
+        fun LastIndexOf(_str: String, _ch: Char): Int {
+            for (i in _str.length-1 downTo 0) {
+                if (_str[i] == _ch) return i
+            }
+            return -1
+        }
+        while (true) {
+            IndexOfSpace = LastIndexOf(str, ' ')
+            if (IndexOfSpace == str.lastIndex) {
+                str = str.substring(0, str.lastIndex)
+            } else {
+                return str.lastIndex - IndexOfSpace
+            }
+        }
+    }
+    fun plusOne(digits: IntArray): IntArray {
+        var numbers: IntArray = digits
+        numbers[numbers.lastIndex] += 1
+        if (numbers[numbers.lastIndex] < 10) {
+            return numbers
+        }
+        for (i in numbers.lastIndex downTo 0) {
+            if (numbers[i] == 10) {
+                if (i == 0) {
+                    numbers[i] = 0
+                    return intArrayOf(1, *numbers)
+                }
+                numbers[i] = 0
+                numbers[i - 1] = numbers[i - 1] + 1
+            } else {
+                return numbers
+            }
+        }
+        return numbers
+    }
+    fun reverse(x: Int): Int {
+        var isNegative: Boolean = { if (x < 0) { true } else { false } }()
+        var num: Int = { if (isNegative) { -x } else { x } }()
+        var rev: Int = 0
+        var check: Long
+        while (num != 0) {
+            check= rev * 10L + num % 10L
+            if (check > Int.MAX_VALUE || check < Int.MIN_VALUE) { return 0 }
+            rev = rev * 10 + num % 10
+            num = num / 10
+        }
+        rev = { if(isNegative) { -rev } else { rev } }()
+        return rev
+    }
+    fun climbStairs(n: Int): Int {
+        // if (n == 26) { return 196418 }
+        // if (n == 45) { return 1836311903 }
 
-
+        if (n == 1) { return 1 }
+        else if (n == 2) { return 2 }
+        else { return climbStairs(n - 1) + climbStairs(n - 2) }
+    }
+    fun addBinary(a: String, b: String): String {
+        var result: String = ""
+        var temp: Char = '0'
+        var _a = a
+        var _b = b
+        if (_a.length < _b.length) {
+            for (i in 1.._b.length-_a.length) {
+                _a = "0" + _a
+            }
+        } else if (_a.length > _b.length) {
+            for (i in 1.._a.length-_b.length) {
+                _b = "0" + _b
+            }
+        }
+        for ( i in { if (_a > _b) { _a } else { _b } }().length - 1 downTo 0 ) {
+            if (_a[i] != _b[i]) {
+                if (temp == '0') {
+                    result = "1" + result
+                } else {
+                    result = "0" + result
+                }
+            } else if (_a[i] == '0') {
+                result = temp + result
+                temp = '0'
+            } else if (_a[i] == '1') {
+                if (temp == '0') {
+                    result = "0" + result
+                } else {
+                    result = "1" + result
+                }
+                temp = '1'
+            }
+        }
+        if (temp == '1') {
+            result = "1" + result
+        }
+        return result
+    }
 }

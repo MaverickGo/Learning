@@ -1,15 +1,16 @@
 
     fun main() {
-        var task: LeetCodeTasks = LeetCodeTasks()
-        var tools: Tools = Tools()
-        var algorithms : Algorithms = Algorithms()
+        val tasks: LeetCodeTasks = LeetCodeTasks()
+        val tools: Tools = Tools()
+        val algorithms : Algorithms = Algorithms()
 
-        var array = tools.getArrayOfInts(20, 0, 101)
-        array = tools.selectionSort(array)
-        for (i in 0..array.size-1) {
-            print("${array[i]} ")
-        }
-        println()
-        print(algorithms.binarySearch(array, 6))
+        //println(algorithms.maxInArray( arrayOf(0, 12, 1, 2, 3, 4, 5, 6) ))
+        // arrayOf(0, 1, 2, 3, 4, 5, 6)
+
+        val usortedArray = tools.getArrayOfInts(500, 0, 2000)
+        println(usortedArray.contentToString())
+        val sortedArray = algorithms.quickSort(usortedArray)
+        println(sortedArray.contentToString())
+
     }
 
