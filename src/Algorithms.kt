@@ -61,4 +61,100 @@ class Algorithms {
             return arrayOf(*quickSort(smallerThanPivot), *equals, *quickSort(biggerThanPivot))
         }
     }
+    fun isVoted(listOfVoted: MutableMap<String, Int>, name: String): Boolean{
+        if (listOfVoted[name] == 1) {
+            println("Kick $name out!")
+            return true
+        } else {
+            println("Let $name to vote")
+            listOfVoted[name] = 1
+            return false
+        }
+    }
+    fun isPossibleToGet(start: Int, target: Int, graph: Map<Int, Array<Int>>): Boolean{
+        var searchQueue: ArrayDeque<Int> = ArrayDeque<Int>(setOf(start))
+        var checkedPoints: MutableMap<Int, Int> = mutableMapOf()
+        var currNode: Int
+        while (!searchQueue.isEmpty()) {
+            currNode = searchQueue.first()
+            searchQueue.removeFirst()
+            if (!checkedPoints.contains(currNode)) {
+                continue
+            }
+            if (currNode == target) {
+                return true
+            } else {
+                checkedPoints[currNode] = 1
+                graph[currNode]?.forEach{ searchQueue.add(it) }
+            }
+        }
+        return false
+    }
+    fun distanceToPoint(start: Int, target: Int, graph: Map<Int, Array<Int>>): Int{
+        var searchQueue: ArrayDeque<Int> = ArrayDeque<Int>(setOf(start))
+        var pointsToCheck: MutableMap<Int, Int> = mutableMapOf(start to 0)
+        var currNode: Int
+        var distanceToCurr: Int
+        while (!searchQueue.isEmpty()) {
+            currNode = searchQueue.removeFirst()
+            distanceToCurr = pointsToCheck[currNode]!!
+            if (currNode == target) {
+                return distanceToCurr
+            }
+            graph[currNode]?.forEach { neighbor ->
+                if (!pointsToCheck.containsKey(neighbor)) {
+                    pointsToCheck[neighbor] = distanceToCurr + 1
+                    searchQueue.add(neighbor)
+                }
+            }
+        }
+        return -1
+    }
+
+
+
+    // код от ИИ
+    fun findPath(start: Int, target: Int, graph: Map<Int, Array<Int>>): ListNode? {
+        if (!graph.containsKey(start)) return null
+
+        val queue = ArrayDeque<Int>()
+        val parent = mutableMapOf<Int, Int>()   // parent[node] = предыдущий узел на пути
+        val visited = mutableSetOf<Int>()
+
+        queue.addLast(start)
+        visited.add(start)
+
+        while (queue.isNotEmpty()) {
+            val curr = queue.removeFirst()
+            if (curr == target) {
+                // Восстанавливаем путь в обратном порядке
+                val path = mutableListOf<Int>()
+                var node = target
+                while (node != start) {
+                    path.add(node)
+                    node = parent[node]!!
+                }
+                path.add(start)
+                // Переворачиваем: start → ... → target
+                path.reverse()
+                // Собираем ListNode‑список
+                val head = ListNode(path[0])
+                var current = head
+                for (i in 1 until path.size) {
+                    val nextNode = ListNode(path[i])
+                    current.next = nextNode
+                    current = nextNode
+                }
+                return head
+            }
+            graph[curr]?.forEach { neighbor ->
+                if (!visited.contains(neighbor)) {
+                    visited.add(neighbor)
+                    parent[neighbor] = curr
+                    queue.addLast(neighbor)
+                }
+            }
+        }
+        return null   // путь не найден
+    }
 }

@@ -221,4 +221,74 @@ class LeetCodeTasks {
         }
         return result
     }
+    fun isAnagram(s: String, t: String): Boolean {
+        if (t.length != s.length) {
+            return false
+        }
+
+        var _t = t
+        var index: Int
+        for (i in 0..s.length - 1) {
+            index = _t.indexOf(s[i])
+            if (index == -1) {
+                return false
+            } else {
+                _t = _t.subSequence(0, index).toString().plus(_t.subSequence(index + 1, _t.length))
+            }
+        }
+        return true
+    }
+    fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
+        if (list1 == null && list2 == null ) { return null }
+        else if (list1 != null && list1?.next == null && list2 == null) { return list1 }
+        else if (list1 == null && list2 != null && list2?.next == null) { return list2 }
+        else if (list1 != null && list1?.next == null && list2 != null && list2?.next == null) {
+            val res = ListNode( { if (list1.`val` < list2.`val`) { list1.`val` } else { list2.`val` } }() )
+            res.next = ListNode( { if (list1.`val` > list2.`val`) { list1.`val` } else { list2.`val` } }() )
+            return res
+        }
+        else if (list1 == null && list2 != null) { return list2 }
+        else if (list1 != null && list2 == null) { return list1 }
+        else {
+            val res = ListNode({
+                if (list1?.`val`!! < list2?.`val`!!) {
+                    list1.`val`
+                } else if (list1?.`val`!! > list2?.`val`!!) {
+                    list2.`val`
+                } else {
+                    list1.`val`
+                }
+            }()!!)
+            res.next = {
+                if (list1?.`val`!! < list2?.`val`!!) {
+                    mergeTwoLists(list1.next, list2)
+                } else if (list1?.`val`!! > list2?.`val`!!) {
+                    mergeTwoLists(list1, list2.next)
+                } else {
+                    mergeTwoLists(list1.next, list2)
+                }
+            }()!!
+            return res
+        }
+    }
+    fun smallerNumbersThanCurrent(nums: IntArray): IntArray {
+        var res: IntArray = IntArray(nums.size)
+        for (i in nums.indices) {
+            res[i] = nums.filter{it < nums[i]}.size
+        }
+        return res
+    }
+    fun intersection(nums1: IntArray, nums2: IntArray): IntArray {
+        var intersections: MutableSet<Int> = mutableSetOf()
+        nums1?.forEach{ if (nums2.contains(it)) { intersections.add(it) } }
+        return intersections.toIntArray()
+    }
+    fun findCenter(edges: Array<IntArray>): Int {
+        if (edges[0][0] == edges[1][0] || edges[0][0] == edges[1][1]) { return edges[0][0] }
+        else { return edges[0][1] }
+    }
+}
+
+class ListNode(var `val`: Int) {
+     var next: ListNode? = null
 }

@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3d90b582-1180-41ac-a6f0-d3b9f6d52907" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LearningProject/Algorithms.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearningProject/Algorithms.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LearningProject/LeetCodeTasks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearningProject/LeetCodeTasks.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LearningProject/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearningProject/MainKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LearningProject/tutor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearningProject/tutor.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Algorithms.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Algorithms.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LeetCodeTasks.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCodeTasks.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tutor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tutor.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +48,11 @@
     "ToolWindow.Run.ShowToolbar": "false",
     "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Mirasvet/Yandex.Disk/Mirasvet/Kotlin/Learning",
     "onboarding.tips.debug.path": "C:/Users/Mirasvet/Yandex.Disk/Mirasvet/Kotlin/LearningProject/src/Main.java",
-    "settings.editor.selected.configurable": "editor.preferences.inline.completion"
+    "settings.editor.selected.configurable": "configurable.group.editor"
   }
 }]]></component>
   <component name="RecentsManager">
